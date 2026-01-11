@@ -1,160 +1,581 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>DockGenix | Computational Molecular Research & Biotechnology</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DockGenix is an international computational biotechnology company focused on molecular-level drug discovery, enzyme engineering, and systems bioinformatics.">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DockGenix | Molecular Intelligence Engine</title>
+  <meta name="description" content="DockGenix accelerates drug discovery, enzyme engineering, and bioinformatics with reproducible computational pipelines—turning molecules into decisions faster.">
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Ambient background layers -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
 
-<header class="hero">
-  <img src="assets/logo1.png" class="logo" alt="DockGenix Logo">
-  <h1>DockGenix</h1>
-  <p class="subtitle">
-    Molecular-Level Computational Research for Drug Discovery, Biotechnology & Systems Biology
-  </p>
-</header>
+  <!-- Top Nav -->
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="DockGenix Home">
+      <img src="assets/logo.svg" alt="DockGenix Logo" class="brand-logo" />
+      <span class="brand-name">DockGenix</span>
+    </a>
 
-<section class="intro">
-  <h2>Our Scientific Philosophy</h2>
-  <p>
-    Modern biological research demands a molecular-resolution understanding of life.
-    DockGenix operates at the intersection of <strong>physics-based molecular modeling,
-    bioinformatics, and data-driven computational biology</strong> to decode biological
-    mechanisms that govern disease, metabolism, catalysis, and host–pathogen interactions.
-  </p>
-</section>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#engine">Engine</a>
+      <a href="#offers">Offers</a>
+      <a href="#services">Capabilities</a>
+      <a href="#industries">Industries</a>
+      <a href="#proof">Standards</a>
+      <a href="#contact" class="nav-cta">Start</a>
+    </nav>
 
-<section>
-  <h2>Drug Discovery & Biopharmaceutical R&D</h2>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
 
-  <div class="card">
-    <h3>Molecular Docking</h3>
-    <p>
-      Molecular docking predicts the preferred binding orientation of small molecules,
-      peptides, or proteins within a biological target. It enables hypothesis-driven
-      screening of chemical space prior to experimental validation, reducing cost and time.
-    </p>
+  <!-- Mobile menu -->
+  <div class="menu" id="menu" hidden>
+    <a href="#engine">Engine</a>
+    <a href="#offers">Offers</a>
+    <a href="#services">Capabilities</a>
+    <a href="#industries">Industries</a>
+    <a href="#proof">Standards</a>
+    <a href="#contact">Start</a>
   </div>
 
-  <div class="card">
-    <h3>Molecular Dynamics Simulation (MDS)</h3>
-    <p>
-      MDS captures atomic-level motions of biomolecules over time, revealing conformational
-      flexibility, stability, and binding persistence beyond static structures. Essential
-      for understanding induced-fit mechanisms and allosteric regulation.
+  <!-- Hero -->
+  <main id="home" class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="kicker">Molecular Intelligence Engine</p>
+        <h1>
+          From molecules to decisions—<span class="accent">faster</span>.
+        </h1>
+        <p class="lead">
+          DockGenix accelerates drug discovery, enzyme engineering, and systems bioinformatics
+          with reproducible, mechanism-first computational workflows that reduce wet-lab iterations.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">Start a Feasibility Sprint</a>
+          <a class="btn ghost" href="#offers">Explore Offers</a>
+        </div>
+
+        <div class="trust-strip" role="list" aria-label="DockGenix key differentiators">
+          <div class="trust" role="listitem">
+            <span class="dot"></span>
+            <span>Mechanism-first insights</span>
+          </div>
+          <div class="trust" role="listitem">
+            <span class="dot"></span>
+            <span>Reproducibility & audit trails</span>
+          </div>
+          <div class="trust" role="listitem">
+            <span class="dot"></span>
+            <span>Decision-grade reporting</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-panel" aria-label="DockGenix value dashboard">
+        <div class="panel-card reveal">
+          <div class="panel-title">What we optimize</div>
+          <div class="panel-metrics">
+            <div class="metric">
+              <div class="metric-value" data-count="45">0</div>
+              <div class="metric-label">Avg. wet-lab cycles reduced*</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value" data-count="14">0</div>
+              <div class="metric-label">Days to shortlist*</div>
+            </div>
+            <div class="metric">
+              <div class="metric-value" data-count="3">0</div>
+              <div class="metric-label">Decision reports / program*</div>
+            </div>
+          </div>
+          <p class="panel-note">
+            *Illustrative benchmarks. Actual outcomes depend on target, assay constraints, and data quality.
+          </p>
+        </div>
+
+        <div class="panel-card reveal">
+          <div class="panel-title">Deliverables you can act on</div>
+          <ul class="mini-list">
+            <li>Ranked candidates with interaction rationale</li>
+            <li>Risk flags: stability, liability, off-target hypotheses</li>
+            <li>Next-experiment plan aligned to your assays</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Engine / Pipeline -->
+  <section id="engine" class="section">
+    <div class="section-head">
+      <h2>The DockGenix Computational Engine</h2>
+      <p>
+        Our workflow is built to convert complexity into clear decisions—combining physics-based modeling,
+        data-driven bioinformatics, and reproducible scientific documentation.
+      </p>
+    </div>
+
+    <div class="pipeline">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>Molecular Hypothesis</h3>
+          <p>Target definition, binding site analysis, constraints, and success criteria.</p>
+          <div class="chips">
+            <span class="chip">Target assessment</span>
+            <span class="chip">Pocket mapping</span>
+            <span class="chip">Constraints</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>Physics-Based Simulation</h3>
+          <p>Docking + dynamics to identify stable interactions and failure modes early.</p>
+          <div class="chips">
+            <span class="chip">Docking</span>
+            <span class="chip">Molecular dynamics</span>
+            <span class="chip">Allostery</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3>Quantitative Prioritization</h3>
+          <p>Free-energy ranking, SAR direction, ADMET triage to refine the shortlist.</p>
+          <div class="chips">
+            <span class="chip">MM-PBSA / MM-GBSA</span>
+            <span class="chip">SAR / QSAR</span>
+            <span class="chip">ADMET</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <h3>Decision-Grade Report</h3>
+          <p>Mechanistic rationale + reproducibility + recommended next experiments.</p>
+          <div class="chips">
+            <span class="chip">Reproducible parameters</span>
+            <span class="chip">Audit trail</span>
+            <span class="chip">Go/No-Go</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offers -->
+  <section id="offers" class="section alt">
+    <div class="section-head">
+      <h2>Productized Programs</h2>
+      <p>
+        Instead of selling tools, we deliver outcomes. Choose a program that matches your timeline and risk profile.
+      </p>
+    </div>
+
+    <div class="offer-grid">
+      <article class="offer reveal">
+        <div class="offer-top">
+          <h3>Feasibility Sprint</h3>
+          <p class="offer-tag">Fast entry • 2–4 weeks</p>
+        </div>
+        <p class="offer-desc">
+          Validate binding hypotheses and rapidly shortlist candidates before heavy wet-lab investment.
+        </p>
+        <ul class="offer-list">
+          <li>Binding site & constraint mapping</li>
+          <li>Docking + sanity MD</li>
+          <li>Ranked Top-10 with interaction rationale</li>
+          <li>Next-experiment plan for your assays</li>
+        </ul>
+        <a class="btn small primary" href="#contact">Start Sprint</a>
+      </article>
+
+      <article class="offer reveal">
+        <div class="offer-top">
+          <h3>Lead Optimization Program</h3>
+          <p class="offer-tag">Depth • 6–10 weeks</p>
+        </div>
+        <p class="offer-desc">
+          Improve stability, persistence, and selectivity with quantitative ranking and SAR direction.
+        </p>
+        <ul class="offer-list">
+          <li>Longer MD + conformational analysis</li>
+          <li>MM-PBSA / MM-GBSA prioritization</li>
+          <li>SAR/QSAR signals & scaffold direction</li>
+          <li>ADMET/liability triage</li>
+        </ul>
+        <a class="btn small primary" href="#contact">Discuss Optimization</a>
+      </article>
+
+      <article class="offer reveal">
+        <div class="offer-top">
+          <h3>Enzyme Engineering Loop</h3>
+          <p class="offer-tag">Industrial biotech • 4–8 weeks</p>
+        </div>
+        <p class="offer-desc">
+          Design mutation candidates to improve substrate specificity, activity, and stability.
+        </p>
+        <ul class="offer-list">
+          <li>Enzyme–substrate docking</li>
+          <li>Mutation impact hypotheses (residue-level)</li>
+          <li>Stability & flexibility analysis</li>
+          <li>Wet-lab shortlist for mutagenesis</li>
+        </ul>
+        <a class="btn small primary" href="#contact">Start Engineering</a>
+      </article>
+    </div>
+
+    <p class="fineprint">
+      Note: Timelines depend on target readiness, data availability (sequence/structure/ligands), and compute scope.
     </p>
-  </div>
+  </section>
 
-  <div class="card">
-    <h3>Virtual Screening & Binding Free Energy</h3>
-    <p>
-      High-throughput virtual screening combined with MM-PBSA / MM-GBSA calculations enables
-      quantitative ranking of ligands based on thermodynamic binding affinity, improving
-      lead prioritization accuracy.
-    </p>
-  </div>
+  <!-- Capabilities (tabs + accordion) -->
+  <section id="services" class="section">
+    <div class="section-head">
+      <h2>Capabilities Explorer</h2>
+      <p>
+        Browse by outcome. Each capability includes the “why it matters” and what you receive.
+      </p>
+    </div>
 
-  <div class="card">
-    <h3>SAR, QSAR & Pharmacophore Modeling</h3>
-    <p>
-      Structure–activity relationships reveal how chemical modifications influence
-      biological response, while QSAR and pharmacophore models abstract these principles
-      into predictive frameworks guiding rational lead optimization.
-    </p>
-  </div>
+    <div class="tabs" role="tablist" aria-label="Capabilities tabs">
+      <button class="tab active" role="tab" aria-selected="true" aria-controls="tab-dd" id="btn-dd">Drug Discovery</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="tab-bio" id="btn-bio">Bioinformatics</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="tab-ind" id="btn-ind">Industrial Biotech</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="tab-ag" id="btn-ag">Agro & Microbial</button>
+    </div>
 
-  <div class="card">
-    <h3>ADMET & Drug-Likeness</h3>
-    <p>
-      Early assessment of absorption, distribution, metabolism, excretion, and toxicity
-      reduces late-stage clinical failures by filtering compounds with unfavorable
-      pharmacokinetic or safety profiles.
-    </p>
-  </div>
-</section>
+    <div class="tabpanels">
+      <!-- Drug Discovery -->
+      <div class="tabpanel active" role="tabpanel" id="tab-dd" aria-labelledby="btn-dd">
+        <div class="accordion">
+          <details class="reveal" open>
+            <summary>
+              <span>Molecular Docking</span>
+              <span class="badge">Shortlist faster</span>
+            </summary>
+            <div class="details-body">
+              <p>
+                Docking is used as a mechanistic filter—not a checkbox. We identify binding modes, key interactions,
+                and early failure signals to reduce wet-lab iterations.
+              </p>
+              <ul>
+                <li>Deliverable: ranked candidates + interaction maps</li>
+                <li>Outcome: fewer compounds synthesized/tested, higher hit-to-lead efficiency</li>
+              </ul>
+            </div>
+          </details>
 
-<section>
-  <h2>Industrial Biotechnology & Enzyme Engineering</h2>
+          <details class="reveal">
+            <summary>
+              <span>Molecular Dynamics Simulation</span>
+              <span class="badge">Stability & persistence</span>
+            </summary>
+            <div class="details-body">
+              <p>
+                Biology moves. MD reveals whether a complex stays bound, escapes, or shifts into non-productive conformations.
+              </p>
+              <ul>
+                <li>Deliverable: stability plots, RMSD/RMSF, interaction persistence, conformational insights</li>
+                <li>Outcome: early de-risking of unstable leads</li>
+              </ul>
+            </div>
+          </details>
 
-  <div class="card">
-    <h3>Enzyme–Substrate Docking & Mutagenesis</h3>
-    <p>
-      Computational enzyme engineering enables rational design of catalytic efficiency,
-      substrate specificity, and thermostability by evaluating residue-level interactions
-      prior to wet-lab mutagenesis.
-    </p>
-  </div>
+          <details class="reveal">
+            <summary>
+              <span>Binding Free Energy Ranking</span>
+              <span class="badge">Quantitative prioritization</span>
+            </summary>
+            <div class="details-body">
+              <p>
+                MM-PBSA/MM-GBSA-based estimates help prioritize candidates beyond docking scores, improving decision confidence.
+              </p>
+              <ul>
+                <li>Deliverable: ranked table with uncertainty notes and assumptions</li>
+                <li>Outcome: better lead prioritization under budget/time constraints</li>
+              </ul>
+            </div>
+          </details>
 
-  <div class="card">
-    <h3>Metabolic Pathway & Flux Analysis</h3>
-    <p>
-      Systems-level pathway modeling and flux balance analysis reveal metabolic bottlenecks
-      and optimization strategies for industrial bioprocesses.
-    </p>
-  </div>
-</section>
+          <details class="reveal">
+            <summary>
+              <span>ADMET & Drug-Likeness</span>
+              <span class="badge">Avoid late failures</span>
+            </summary>
+            <div class="details-body">
+              <p>
+                Early liability filtering reduces late-stage surprises. We focus on actionable flags and trade-offs.
+              </p>
+              <ul>
+                <li>Deliverable: risk flags + optimization suggestions</li>
+                <li>Outcome: higher quality leads entering assays</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
 
-<section>
-  <h2>Agro-Biotechnology & Microbial Systems</h2>
+      <!-- Bioinformatics -->
+      <div class="tabpanel" role="tabpanel" id="tab-bio" aria-labelledby="btn-bio">
+        <div class="accordion">
+          <details class="reveal" open>
+            <summary>
+              <span>Genomics & Annotation</span>
+              <span class="badge">Interpretability</span>
+            </summary>
+            <div class="details-body">
+              <p>
+                From genomes to functional inference, we build statistically rigorous and biologically interpretable pipelines.
+              </p>
+              <ul>
+                <li>Deliverable: annotation summaries, comparative insights, reproducible workflow notes</li>
+                <li>Outcome: faster hypothesis formation and candidate gene prioritization</li>
+              </ul>
+            </div>
+          </details>
 
-  <div class="card">
-    <h3>Host–Pathogen & Network Pharmacology</h3>
-    <p>
-      Network-based approaches uncover multi-target intervention strategies in plant and
-      microbial systems, supporting sustainable disease management.
-    </p>
-  </div>
+          <details class="reveal">
+            <summary>
+              <span>Transcriptomics & Systems Analysis</span>
+              <span class="badge">Signal to mechanism</span>
+            </summary>
+            <div class="details-body">
+              <p>
+                We connect expression patterns to pathway and network-level mechanisms to support target selection and validation.
+              </p>
+              <ul>
+                <li>Deliverable: pathway enrichment, networks, interpretable reports</li>
+                <li>Outcome: clearer causal hypotheses for downstream experiments</li>
+              </ul>
+            </div>
+          </details>
 
-  <div class="card">
-    <h3>Antimicrobial Peptides & Resistance Analysis</h3>
-    <p>
-      Computational modeling of antimicrobial peptides and resistance genes aids in the
-      design of next-generation bioactive molecules against evolving pathogens.
-    </p>
-  </div>
-</section>
+          <details class="reveal">
+            <summary>
+              <span>Network Pharmacology</span>
+              <span class="badge">Multi-target strategy</span>
+            </summary>
+            <div class="details-body">
+              <p>
+                Multi-target interventions are often more realistic in complex diseases and microbial systems.
+              </p>
+              <ul>
+                <li>Deliverable: network models + prioritized intervention points</li>
+                <li>Outcome: reduced risk of single-target failure</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
 
-<section>
-  <h2>Bioinformatics, Genomics & Systems Biology</h2>
+      <!-- Industrial Biotech -->
+      <div class="tabpanel" role="tabpanel" id="tab-ind" aria-labelledby="btn-ind">
+        <div class="accordion">
+          <details class="reveal" open>
+            <summary>
+              <span>Enzyme–Substrate Docking & Mutagenesis</span>
+              <span class="badge">Rational mutations</span>
+            </summary>
+            <div class="details-body">
+              <p>
+                We propose mutation candidates grounded in residue-level interaction logic and stability considerations.
+              </p>
+              <ul>
+                <li>Deliverable: mutation shortlist + mechanistic rationale</li>
+                <li>Outcome: fewer rounds of trial-and-error mutagenesis</li>
+              </ul>
+            </div>
+          </details>
 
-  <div class="card">
-    <p>
-      From genome annotation to comparative genomics and transcriptomics, DockGenix deciphers
-      biological information encoded across molecular hierarchies using statistically
-      rigorous and biologically interpretable workflows.
-    </p>
-  </div>
-</section>
+          <details class="reveal">
+            <summary>
+              <span>Metabolic Pathway & Flux Analysis</span>
+              <span class="badge">Bottleneck discovery</span>
+            </summary>
+            <div class="details-body">
+              <p>
+                Systems-level pathway modeling to identify constraints and optimization strategies for bioprocess performance.
+              </p>
+              <ul>
+                <li>Deliverable: bottleneck map + optimization hypotheses</li>
+                <li>Outcome: focused engineering effort with measurable targets</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
 
-<section>
-  <h2>Synthetic Biology & Molecular Design</h2>
+      <!-- Agro & Microbial -->
+      <div class="tabpanel" role="tabpanel" id="tab-ag" aria-labelledby="btn-ag">
+        <div class="accordion">
+          <details class="reveal" open>
+            <summary>
+              <span>Host–Pathogen Modeling</span>
+              <span class="badge">Sustainable control</span>
+            </summary>
+            <div class="details-body">
+              <p>
+                Identify intervention points across pathways and networks to guide sustainable disease management strategies.
+              </p>
+              <ul>
+                <li>Deliverable: pathway/network intervention map</li>
+                <li>Outcome: better prioritization of targets and combinations</li>
+              </ul>
+            </div>
+          </details>
 
-  <div class="card">
-    <p>
-      In silico design of primers, vectors, codon-optimized genes, and CRISPR elements
-      accelerates experimental design while minimizing trial-and-error.
-    </p>
-  </div>
-</section>
+          <details class="reveal">
+            <summary>
+              <span>Antimicrobial Peptides & Resistance Analysis</span>
+              <span class="badge">Next-gen bioactives</span>
+            </summary>
+            <div class="details-body">
+              <p>
+                Model peptide interactions and resistance risk patterns to guide bioactive design against evolving pathogens.
+              </p>
+              <ul>
+                <li>Deliverable: candidate designs + resistance risk notes</li>
+                <li>Outcome: improved probability of durable efficacy</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="why">
-  <h2>Why DockGenix?</h2>
-  <ul>
-    <li>Physics-based molecular modeling</li>
-    <li>Research-grade scientific rigor</li>
-    <li>Bridging computation with experimentation</li>
-    <li>International standards & reproducibility</li>
-  </ul>
-</section>
+  <!-- Industries -->
+  <section id="industries" class="section alt">
+    <div class="section-head">
+      <h2>Who We Collaborate With</h2>
+      <p>
+        Built for teams who need rigorous, defendable decisions—under timelines and budget constraints.
+      </p>
+    </div>
 
-<footer>
-  <p>© 2026 DockGenix — Computational Molecular Research</p>
-</footer>
+    <div class="pill-grid">
+      <div class="pill reveal">Pharma R&amp;D & specialty generics</div>
+      <div class="pill reveal">CRDMO & discovery service teams</div>
+      <div class="pill reveal">Biotech startups & incubators</div>
+      <div class="pill reveal">Industrial biotech & biomanufacturing</div>
+      <div class="pill reveal">Agro-biotech & microbial innovation</div>
+      <div class="pill reveal">Academic & translational research labs</div>
+    </div>
+  </section>
 
-<script src="script.js"></script>
+  <!-- Proof / Standards -->
+  <section id="proof" class="section">
+    <div class="section-head">
+      <h2>Scientific Standards</h2>
+      <p>
+        DockGenix emphasizes reproducibility, interpretability, and transparent assumptions—so your team can trust the outputs.
+      </p>
+    </div>
+
+    <div class="proof-grid">
+      <article class="proof reveal">
+        <h3>Reproducibility by design</h3>
+        <p>
+          Versioned parameters, documented inputs, and controlled workflows to support audits, handoffs, and collaboration.
+        </p>
+      </article>
+      <article class="proof reveal">
+        <h3>Mechanism-first reporting</h3>
+        <p>
+          We explain why candidates rank the way they do—interaction logic, stability, and constraints—beyond simple scores.
+        </p>
+      </article>
+      <article class="proof reveal">
+        <h3>Decision-grade deliverables</h3>
+        <p>
+          Ranked shortlists, risk flags, and next-experiment plans tailored to your assay constraints and timeline.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact / CTA -->
+  <section id="contact" class="section alt">
+    <div class="cta">
+      <div class="cta-copy">
+        <h2>Initiate a Scientific Discussion</h2>
+        <p>
+          Share your target, sequence, structure, or hypothesis. We’ll suggest the fastest computational path to a defendable decision.
+        </p>
+        <ul class="cta-list">
+          <li>Feasibility Sprint for fast go/no-go</li>
+          <li>Optimization Program for depth and ranking confidence</li>
+          <li>Enzyme Engineering for industrial performance improvements</li>
+        </ul>
+      </div>
+
+      <form class="cta-form" id="leadForm" autocomplete="on">
+        <label>
+          Your name
+          <input type="text" name="name" placeholder="Full name" required />
+        </label>
+        <label>
+          Work email
+          <input type="email" name="email" placeholder="name@company.com" required />
+        </label>
+        <label>
+          What are you working on?
+          <select name="interest" required>
+            <option value="" disabled selected>Select one</option>
+            <option>Feasibility Sprint</option>
+            <option>Lead Optimization</option>
+            <option>Enzyme Engineering</option>
+            <option>Bioinformatics / Systems Biology</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>
+          Message (optional)
+          <textarea name="message" rows="4" placeholder="Target, timeline, what data you have (sequence/structure/ligands), and what decision you need."></textarea>
+        </label>
+
+        <button class="btn primary" type="submit">Request Discussion</button>
+        <p class="form-note" id="formNote">
+          This form is front-end only. Wire it to your backend/email service when ready.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="DockGenix Logo" />
+          <div>
+            <div class="footer-name">DockGenix</div>
+            <div class="footer-tag">Computational Molecular Research</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-right">
+        <p>© 2026 DockGenix — Molecular Intelligence Engine</p>
+        <p class="muted">Built for reproducibility • mechanism-first • decision-grade outputs</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
