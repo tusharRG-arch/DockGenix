@@ -687,4 +687,43 @@ body{
   font-weight: 800;
 }
 
+add at last of style css 
+/* ===== Align offer buttons bottom-center ===== */
+
+.offer {
+  display: flex;
+  flex-direction: column;
+}
+
+.offer .btn {
+  margin-top: auto;
+  align-self: center;
+}
+
+/* ===== Our Team block ===== */
+
+.team-block{
+  margin-top: 22px;
+  text-align: center;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.20);
+  padding: 18px;
+}
+
+.team-title{
+  margin: 0 0 12px;
+  font-weight: 900;
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+}
+
+.team-names{
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-weight: 600;
+}
 
