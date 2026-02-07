@@ -783,3 +783,26 @@ body{
   margin: 0 auto;
   line-height: 1.5;
 }
+
+
+/* Dockgenix_mol_panel */
+
+.insight-note {
+  font-size: 1rem;
+  color: #cfd6dd;
+  max-width: 760px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.contribution-block {
+  margin-bottom: 24px;
+}
+
+.contribution-divider {
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+  margin: 28px 0;
+}
+
