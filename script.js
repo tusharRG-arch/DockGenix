@@ -1,158 +1,172 @@
-// DockGenix v2 interactions:
-// - Mobile menu
-// - Scroll reveal
-// - Tabs
-// - Animated counters
-// - Simple form handler (front-end only)
-// - Auto-close mobile menu on scroll
-
-(function () {
-
-  /* =========================
-     Mobile menu
-  ========================= */
-  const menuBtn = document.getElementById("menuBtn");
-  const menu = document.getElementById("menu");
-
-  let menuOpen = false;
-  let lastScrollTop = 0;
-
-  if (!menuBtn || !menu) return;
-
-  menuBtn.addEventListener("click", () => {
-    menuOpen = !menuOpen;
-    menu.hidden = !menuOpen;
-    menuBtn.setAttribute("aria-expanded", String(menuOpen));
-  });
-
-  // Close menu when a link is clicked
-  menu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      menu.hidden = true;
-      menuBtn.setAttribute("aria-expanded", "false");
-      menuOpen = false;
-    });
-  });
-
-  /* =========================
-     Close mobile menu on scroll
-  ========================= */
-  window.addEventListener("scroll", () => {
-    if (!menuOpen) return;
-
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop + 5) {
-      // user scrolled down → close menu
-      menu.hidden = true;
-      menuBtn.setAttribute("aria-expanded", "false");
-      menuOpen = false;
+(() => {
+  function onReady(fn) {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", fn, { once: true });
+      return;
     }
-
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-  });
-
-  /* =========================
-     Scroll reveal
-  ========================= */
-  const revealEls = document.querySelectorAll(".reveal");
-
-  if (revealEls.length) {
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in");
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-
-    revealEls.forEach(el => revealObserver.observe(el));
+    fn();
   }
 
-  /* =========================
-     Tabs
-  ========================= */
-  const tabs = document.querySelectorAll(".tab");
-  const panels = document.querySelectorAll(".tabpanel");
+  onReady(() => {
+    const menuButton = document.getElementById("menu-toggle");
+    const nav = document.getElementById("primary-nav");
+    const navLinks = nav ? Array.from(nav.querySelectorAll("a")) : [];
+    const contactForm = document.getElementById("contact-form");
+    const statusText = document.getElementById("form-status");
+    const focusableSelector = "a[href], button:not([disabled]), textarea, input, select";
+    let previousFocus = null;
 
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      const targetId = tab.getAttribute("aria-controls");
-
-      tabs.forEach(t => {
-        const active = t === tab;
-        t.classList.toggle("active", active);
-        t.setAttribute("aria-selected", active ? "true" : "false");
-      });
-
-      panels.forEach(panel => {
-        panel.classList.toggle("active", panel.id === targetId);
-      });
-    });
-  });
-
-  /* =========================
-     Animated counters
-  ========================= */
-  const counters = document.querySelectorAll("[data-count]");
-  let countersRan = false;
-
-  function animateCount(el, to) {
-    const duration = 900;
-    const start = performance.now();
-
-    function frame(now) {
-      const progress = Math.min((now - start) / duration, 1);
-      const value = Math.floor(to * progress);
-      el.textContent = value + (to === 45 ? "%" : "");
-      if (progress < 1) requestAnimationFrame(frame);
+    function isDesktop() {
+      return window.matchMedia("(min-width: 860px)").matches;
     }
 
-    requestAnimationFrame(frame);
-  }
+    function lockBodyScroll(lock) {
+      document.body.classList.toggle("nav-open", lock);
+    }
 
-  const heroPanel = document.querySelector(".hero-panel");
+    function openMenu() {
+      if (!menuButton || !nav || isDesktop()) return;
+      previousFocus = document.activeElement;
+      nav.dataset.open = "true";
+      menuButton.setAttribute("aria-expanded", "true");
+      lockBodyScroll(true);
+      const focusable = nav.querySelectorAll(focusableSelector);
+      if (focusable.length) {
+        focusable[0].focus();
+      }
+    }
 
-  if (heroPanel && counters.length) {
-    const counterObserver = new IntersectionObserver(
-      (entries) => {
-        if (!countersRan && entries.some(e => e.isIntersecting)) {
-          countersRan = true;
-          counters.forEach(el => {
-            const to = parseInt(el.dataset.count, 10);
-            animateCount(el, isNaN(to) ? 0 : to);
-          });
-          counterObserver.disconnect();
+    function closeMenu(returnFocus = false) {
+      if (!menuButton || !nav) return;
+      nav.dataset.open = "false";
+      menuButton.setAttribute("aria-expanded", "false");
+      lockBodyScroll(false);
+      if (returnFocus && previousFocus instanceof HTMLElement) {
+        previousFocus.focus();
+      }
+    }
+
+    function trapFocus(event) {
+      if (!nav || nav.dataset.open !== "true" || event.key !== "Tab") return;
+      const focusable = Array.from(nav.querySelectorAll(focusableSelector));
+      if (!focusable.length) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      const current = document.activeElement;
+
+      if (event.shiftKey && current === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && current === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+
+    if (menuButton && nav) {
+      menuButton.addEventListener("click", () => {
+        const isOpen = nav.dataset.open === "true";
+        if (isOpen) {
+          closeMenu(true);
+        } else {
+          openMenu();
         }
-      },
-      { threshold: 0.25 }
-    );
+      });
 
-    counterObserver.observe(heroPanel);
-  }
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (!isDesktop()) closeMenu(false);
+        });
+      });
 
-  /* =========================
-     Form handler (front-end only)
-  ========================= */
-  const leadForm = document.getElementById("leadForm");
-  const formNote = document.getElementById("formNote");
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && nav.dataset.open === "true") {
+          closeMenu(true);
+          return;
+        }
+        trapFocus(event);
+      });
 
-  if (leadForm && formNote) {
-    leadForm.addEventListener("submit", (e) => {
-      e.preventDefault();
+      document.addEventListener("click", (event) => {
+        if (isDesktop() || nav.dataset.open !== "true") return;
+        const target = event.target;
+        if (!(target instanceof Node)) return;
+        if (!nav.contains(target) && !menuButton.contains(target)) {
+          closeMenu(false);
+        }
+      });
 
-      const payload = Object.fromEntries(new FormData(leadForm).entries());
+      window.addEventListener("resize", () => {
+        if (isDesktop()) {
+          nav.dataset.open = "false";
+          menuButton.setAttribute("aria-expanded", "false");
+          lockBodyScroll(false);
+        }
+      });
+    }
 
-      formNote.textContent =
-        "Received (front-end demo). Payload: " +
-        JSON.stringify(payload);
+    const revealElements = Array.from(document.querySelectorAll(".reveal"));
+    if ("IntersectionObserver" in window && revealElements.length) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      revealElements.forEach((item) => observer.observe(item));
+    } else {
+      revealElements.forEach((item) => item.classList.add("in"));
+    }
 
-      leadForm.reset();
-    });
-  }
+    if (contactForm && statusText) {
+      contactForm.addEventListener("submit", (event) => {
+        event.preventDefault();
 
+        const formData = new FormData(contactForm);
+        const name = String(formData.get("name") || "").trim();
+        const email = String(formData.get("email") || "").trim();
+        const organization = String(formData.get("organization") || "").trim();
+        const projectType = String(formData.get("projectType") || "").trim();
+        const message = String(formData.get("message") || "").trim();
+
+        if (!name || !email || !organization || !projectType || !message) {
+          statusText.textContent = "Please complete all required fields before submitting.";
+          return;
+        }
+
+        const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        if (!emailValid) {
+          statusText.textContent = "Please enter a valid email address.";
+          return;
+        }
+
+        const subject = encodeURIComponent(`DockGenix inquiry: ${projectType} (${organization})`);
+        const body = encodeURIComponent(
+          `Name: ${name}\n` +
+          `Email: ${email}\n` +
+          `Organization: ${organization}\n` +
+          `Project type: ${projectType}\n\n` +
+          `Project brief:\n${message}`
+        );
+
+        const mailtoUrl = `mailto:info@dockgenix.in?subject=${subject}&body=${body}`;
+        statusText.textContent = "Opening your email client. If it does not open, email info@dockgenix.in directly.";
+
+        try {
+          window.location.href = mailtoUrl;
+          window.setTimeout(() => {
+            statusText.textContent = "If your email client did not open, please send your inquiry manually to info@dockgenix.in.";
+          }, 1400);
+        } catch (error) {
+          statusText.textContent = "Could not open your email client. Please send your request to info@dockgenix.in.";
+        }
+      });
+    }
+  });
 })();
