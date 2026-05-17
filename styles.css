@@ -919,6 +919,15 @@ ul {
   line-height: 1.65;
 }
 
+.agent-video-fallback a {
+  color: var(--accent-light);
+  font-weight: 600;
+}
+
+.agent-video-fallback a:hover {
+  color: #fff;
+}
+
 .agent-content {
   display: grid;
   gap: 1.5rem;
