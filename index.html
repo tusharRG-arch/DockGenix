@@ -471,12 +471,33 @@
     <section id="metaboagent" class="section section-dark">
       <div class="container">
         <div class="section-head section-head-center">
-          <p class="overline">Public AI Agent</p>
           <h2>MetaboAgent: Evidence-Grounded Biochemistry Research</h2>
-          <p class="section-desc">A public DockGenix research agent built on the Gemma 4 family for pathway reasoning, compound lookup, enzyme analysis, and literature-grounded biochemical research.</p>
         </div>
 
         <div class="agent-showcase">
+          <article class="agent-panel reveal">
+            <h3>MetaboAgent</h3>
+            <p class="agent-lead">An evidence-grounded biochemistry research agent built on the Gemma 4 family. Ask about metabolic pathways, compounds, enzymes, or current literature with citations linked back to source databases.</p>
+
+            <a class="agent-url" href="https://metaboagent.dockgenix.in" target="_blank" rel="noopener noreferrer" aria-label="Open metaboagent.dockgenix.in in a new tab">
+              <svg class="agent-url-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span class="agent-url-text"><span class="agent-url-protocol">https://</span>metaboagent.dockgenix.in</span>
+              <svg class="agent-url-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
+            </a>
+
+            <div class="agent-actions">
+              <a class="btn btn-accent" href="https://metaboagent.dockgenix.in" target="_blank" rel="noopener noreferrer">Try It Live</a>
+              <a class="btn btn-outline" href="https://github.com/tushrx/metaboagent" target="_blank" rel="noopener noreferrer">View Source Code</a>
+            </div>
+
+            <ul class="agent-data-list">
+              <li>PubMed grounding with 54,000 indexed abstracts plus live NCBI E-utilities.</li>
+              <li>KEGG-backed retrieval across compounds, reactions, and pathways.</li>
+              <li>UniProt protein evidence for enzyme and function-level queries.</li>
+              <li>Streaming answers with citations populated in real time.</li>
+            </ul>
+          </article>
+
           <div class="agent-video-card reveal">
             <div class="video-shell">
               <iframe
@@ -493,56 +514,38 @@
               <p class="agent-video-fallback">If your browser blocks embedded playback, <a href="https://www.youtube.com/watch?v=GhUZqySpQqk" target="_blank" rel="noopener noreferrer">watch the demo on YouTube</a>.</p>
             </div>
           </div>
+        </div>
 
-          <div class="agent-content">
-            <article class="agent-panel reveal">
-              <div class="agent-kicker">Live Product</div>
-              <h3>MetaboAgent</h3>
-              <p class="agent-lead">An evidence-grounded biochemistry research agent built on the Gemma 4 family. Ask about metabolic pathways, compounds, enzymes, or current literature with citations linked back to source databases.</p>
-              <div class="agent-actions">
-                <a class="btn btn-accent" href="https://metaboagent.dockgenix.in" target="_blank" rel="noopener noreferrer">Try It Live</a>
-                <a class="btn btn-outline" href="https://github.com/tushrx/metaboagent" target="_blank" rel="noopener noreferrer">View Source Code</a>
-              </div>
-              <ul class="agent-data-list">
-                <li>PubMed grounding with 54,000 indexed abstracts plus live NCBI E-utilities.</li>
-                <li>KEGG-backed retrieval across compounds, reactions, and pathways.</li>
-                <li>UniProt protein evidence for enzyme and function-level queries.</li>
-                <li>Streaming answers with citations populated in real time.</li>
-              </ul>
-            </article>
+        <div class="agent-grid">
+          <article class="agent-card reveal">
+            <div class="agent-card-label">Architecture</div>
+            <h3>4x NVIDIA L40 Deployment</h3>
+            <p>MetaboAgent runs on a multi-tier Gemma 4 stack tuned for routing, tool use, multimodal inputs, and multi-step biochemical reasoning.</p>
+            <ul>
+              <li>Gemma 4 E4B for routing, function calling, and multimodal inputs</li>
+              <li>Gemma 4 26B MoE for deeper reasoning and pathway synthesis</li>
+              <li>15 tools spanning PubMed, KEGG, UniProt, BLAST, and identifier checks</li>
+            </ul>
+          </article>
 
-            <div class="agent-grid">
-              <article class="agent-card reveal">
-                <div class="agent-card-label">Architecture</div>
-                <h3>4x NVIDIA L40 Deployment</h3>
-                <p>MetaboAgent runs on a multi-tier Gemma 4 stack tuned for routing, tool use, multimodal inputs, and multi-step biochemical reasoning.</p>
-                <ul>
-                  <li>Gemma 4 E4B for routing, function calling, and multimodal inputs</li>
-                  <li>Gemma 4 26B MoE for deeper reasoning and pathway synthesis</li>
-                  <li>15 tools spanning PubMed, KEGG, UniProt, BLAST, and identifier checks</li>
-                </ul>
-              </article>
+          <article class="agent-card reveal">
+            <div class="agent-card-label">Research Findings</div>
+            <h3>Built as a Measurement Platform</h3>
+            <p>The system was used to publish findings about scientific grounding quality in LLM workflows, not just to ship a demo interface.</p>
+            <ul>
+              <li>Vision LLMs are not reliable OCSR systems under strict structure matching.</li>
+              <li>Existence-only citation checks can hide severe semantic hallucination.</li>
+              <li>Every numerical claim traces to JSON artifacts under the evaluation pipeline.</li>
+            </ul>
+          </article>
 
-              <article class="agent-card reveal">
-                <div class="agent-card-label">Research Findings</div>
-                <h3>Built as a Measurement Platform</h3>
-                <p>The system was used to publish findings about scientific grounding quality in LLM workflows, not just to ship a demo interface.</p>
-                <ul>
-                  <li>Vision LLMs are not reliable OCSR systems under strict structure matching.</li>
-                  <li>Existence-only citation checks can hide severe semantic hallucination.</li>
-                  <li>Every numerical claim traces to JSON artifacts under the evaluation pipeline.</li>
-                </ul>
-              </article>
-
-              <article class="agent-card reveal">
-                <div class="agent-card-label">Reproducibility</div>
-                <h3>Open Evaluation Workflow</h3>
-                <p>The project is Apache 2.0 licensed with a one-command evaluation path for reproducing the reported benchmark outputs.</p>
-                <div class="agent-command">python -m eval all --report</div>
-                <p class="agent-note">Approximate runtime is 12 minutes on one L40-class GPU, with outputs stored under <code>eval/results/</code>.</p>
-              </article>
-            </div>
-          </div>
+          <article class="agent-card reveal">
+            <div class="agent-card-label">Reproducibility</div>
+            <h3>Open Evaluation Workflow</h3>
+            <p>The project is Apache 2.0 licensed with a one-command evaluation path for reproducing the reported benchmark outputs.</p>
+            <div class="agent-command">python -m eval all --report</div>
+            <p class="agent-note">Approximate runtime is 12 minutes on one L40-class GPU, with outputs stored under <code>eval/results/</code>.</p>
+          </article>
         </div>
       </div>
     </section>
