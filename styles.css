@@ -887,12 +887,12 @@ ul {
   background: rgba(8, 13, 21, 0.55);
   color: var(--accent-light);
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: clamp(0.78rem, 2.6vw, 0.92rem);
+  font-size: clamp(0.74rem, 2.6vw, 0.92rem);
   font-weight: 600;
   text-decoration: none;
   transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
-  width: fit-content;
   max-width: 100%;
+  box-sizing: border-box;
 }
 
 .agent-url:hover,
@@ -1540,6 +1540,18 @@ ul {
 @media (max-width: 639px) {
   .mol-viewer {
     max-width: 340px;
+  }
+
+  .agent-panel {
+    padding: 1.25rem;
+  }
+
+  .agent-lead,
+  .agent-data-list li,
+  .agent-card > p,
+  .agent-card ul li,
+  .agent-video-caption p {
+    overflow-wrap: anywhere;
   }
 }
 
