@@ -1,15 +1,4 @@
-# CLAUDE.md
-
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
-## Repository purpose
-
-Static marketing site for **DockGenix** (dockgenix.in) — a biotech/bioinformatics consultancy. Hosted via GitHub Pages with a custom domain set through `CNAME` (`dockgenix.in`). No build system, no package manager, no tests.
-
-## Local preview
-
-Open `index.html` directly in a browser, or serve the directory to get correct relative-path and `fetch`-style behaviour:
-
+ 
 ```bash
 python3 -m http.server 8000   # then visit http://localhost:8000
 ```
