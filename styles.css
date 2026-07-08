@@ -1441,6 +1441,126 @@ section[id] {
   scroll-margin-top: 5.5rem;
 }
 
+/* ---- Badge pill (eyebrow) ---- */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  background: var(--accent-glow);
+  border: 1px solid rgba(196, 148, 78, 0.3);
+  color: var(--accent-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1.35rem;
+}
+
+.badge-pill .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(196, 148, 78, 0.18);
+}
+
+.section-dark .badge-pill,
+.page-hero .badge-pill {
+  color: var(--accent-dark);
+}
+
+.section-dark .badge-pill {
+  color: var(--accent-light);
+  background: rgba(196, 148, 78, 0.12);
+}
+
+/* ---- Agent showcase (MetaboAgent) ---- */
+.agent-card {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(196, 148, 78, 0.12), rgba(33, 43, 60, 0.5));
+  border: 1px solid rgba(196, 148, 78, 0.35);
+  border-radius: var(--radius-xl);
+  padding: clamp(2rem, 5vw, 3.5rem);
+  box-shadow: var(--shadow-accent);
+}
+
+.agent-card .badge-pill {
+  margin-bottom: 1.1rem;
+}
+
+.agent-card h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.agent-card .agent-lead {
+  margin: 1rem auto 0;
+  max-width: 56ch;
+  color: var(--text-on-dark-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.agent-card .hero-actions {
+  justify-content: center;
+  margin-top: 1.75rem;
+}
+
+.agent-card .btn-outline {
+  border-color: var(--border-dark);
+  color: var(--text-on-dark);
+}
+
+.agent-card .btn-outline:hover {
+  border-color: var(--accent-light);
+  color: var(--accent-light);
+  background: rgba(196, 148, 78, 0.12);
+}
+
+.agent-features {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.75rem auto 0;
+  max-width: 640px;
+  text-align: left;
+  list-style: none;
+  padding: 0;
+}
+
+.agent-features li {
+  position: relative;
+  padding-left: 1.6rem;
+  color: var(--text-on-dark-muted);
+  font-size: 0.93rem;
+  line-height: 1.55;
+}
+
+.agent-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--accent-light);
+  transform: rotate(45deg);
+}
+
+@media (min-width: 640px) {
+  .agent-features {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem 2rem;
+  }
+}
+
 /* ---- Molecule caption chip ---- */
 .mol-caption {
   position: absolute;
