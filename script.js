@@ -110,24 +110,23 @@
       }, { passive: true });
     }
 
-    // --- Active nav link highlight ---
-    const sections = document.querySelectorAll("section[id]");
-    if (sections.length && navLinks.length) {
-      const observerNav = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const id = entry.target.getAttribute("id");
-              navLinks.forEach((link) => {
-                const isActive = link.getAttribute("href") === "#" + id;
-                link.style.color = isActive ? "#c4944e" : "";
-              });
-            }
-          });
-        },
-        { rootMargin: "-30% 0px -60% 0px" }
-      );
-      sections.forEach((s) => observerNav.observe(s));
+    // --- Active nav link highlight (multi-page, pathname-based) ---
+    if (navLinks.length) {
+      const normalize = (path) => {
+        let p = path.replace(/index\.html?$/i, "");
+        if (!p.endsWith("/")) p += "/";
+        return p;
+      };
+      const here = normalize(window.location.pathname);
+      navLinks.forEach((link) => {
+        let linkPath;
+        try {
+          linkPath = normalize(new URL(link.href).pathname);
+        } catch (error) {
+          return;
+        }
+        if (linkPath === here) link.setAttribute("aria-current", "page");
+      });
     }
 
     // --- Reveal on scroll ---
@@ -152,46 +151,72 @@
       revealElements.forEach((item) => item.classList.add("in"));
     }
 
-    // --- Contact form ---
+    // --- Contact form (Web3Forms delivery with mailto fallback) ---
     if (contactForm && statusText) {
-      contactForm.addEventListener("submit", (event) => {
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+
+      function buildMailto(fields) {
+        const subject = encodeURIComponent(
+          "DockGenix inquiry: " + fields.projectType + " (" + fields.organization + ")"
+        );
+        const body = encodeURIComponent(
+          "Name: " + fields.name + "\n" +
+          "Email: " + fields.email + "\n" +
+          "Organization: " + fields.organization + "\n" +
+          "Service Area: " + fields.projectType + "\n\n" +
+          "Project Brief:\n" + fields.message
+        );
+        return "mailto:info@dockgenix.in?subject=" + subject + "&body=" + body;
+      }
+
+      contactForm.addEventListener("submit", async (event) => {
         event.preventDefault();
 
         const formData = new FormData(contactForm);
-        const name = String(formData.get("name") || "").trim();
-        const email = String(formData.get("email") || "").trim();
-        const organization = String(formData.get("organization") || "").trim();
-        const projectType = String(formData.get("projectType") || "").trim();
-        const message = String(formData.get("message") || "").trim();
+        const fields = {
+          name: String(formData.get("name") || "").trim(),
+          email: String(formData.get("email") || "").trim(),
+          organization: String(formData.get("organization") || "").trim(),
+          projectType: String(formData.get("projectType") || "").trim(),
+          message: String(formData.get("message") || "").trim(),
+        };
 
-        if (!name || !email || !organization || !projectType || !message) {
+        if (!fields.name || !fields.email || !fields.organization || !fields.projectType || !fields.message) {
           statusText.textContent = "Please complete all required fields before submitting.";
           return;
         }
 
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)) {
           statusText.textContent = "Please enter a valid email address.";
           return;
         }
 
-        const subject = encodeURIComponent("DockGenix inquiry: " + projectType + " (" + organization + ")");
-        const body = encodeURIComponent(
-          "Name: " + name + "\n" +
-          "Email: " + email + "\n" +
-          "Organization: " + organization + "\n" +
-          "Service Area: " + projectType + "\n\n" +
-          "Project Brief:\n" + message
-        );
-
-        statusText.textContent = "Opening your email client...";
+        statusText.textContent = "Sending your inquiry...";
+        if (submitButton) submitButton.disabled = true;
 
         try {
-          window.location.href = "mailto:info@dockgenix.in?subject=" + subject + "&body=" + body;
-          window.setTimeout(() => {
-            statusText.textContent = "If your email client did not open, please send your inquiry to info@dockgenix.in.";
-          }, 1400);
+          const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: formData,
+          });
+          const data = await response.json().catch(() => ({}));
+
+          if (response.ok && data.success) {
+            statusText.textContent = "Thank you — your inquiry has been sent. We will respond shortly.";
+            contactForm.reset();
+          } else {
+            throw new Error(data.message || "Submission failed");
+          }
         } catch (error) {
-          statusText.textContent = "Could not open your email client. Please email info@dockgenix.in directly.";
+          statusText.textContent = "We could not send it automatically — opening your email client as a fallback...";
+          try {
+            window.location.href = buildMailto(fields);
+          } catch (mailError) {
+            statusText.textContent = "Please email your inquiry directly to info@dockgenix.in.";
+          }
+        } finally {
+          if (submitButton) submitButton.disabled = false;
         }
       });
     }
