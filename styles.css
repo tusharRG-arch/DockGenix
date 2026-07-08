@@ -1481,7 +1481,9 @@ section[id] {
   max-width: 860px;
   margin: 0 auto;
   text-align: center;
-  background: linear-gradient(135deg, rgba(196, 148, 78, 0.12), rgba(33, 43, 60, 0.5));
+  background:
+    linear-gradient(135deg, rgba(196, 148, 78, 0.14), rgba(196, 148, 78, 0) 55%),
+    linear-gradient(160deg, #273143, #161d28);
   border: 1px solid rgba(196, 148, 78, 0.35);
   border-radius: var(--radius-xl);
   padding: clamp(2rem, 5vw, 3.5rem);
