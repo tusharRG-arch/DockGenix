@@ -1,201 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI | DockGenix — AI Agents for Life Science</title>
-  <meta name="description" content="AI is core to how DockGenix works — AI/ML-driven drug discovery, predictive modeling, and MetaboAgent, our AI agent for metabolic engineering at metaboagent.dockgenix.in." />
-  <link rel="canonical" href="https://dockgenix.in/ai/" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scientific AI | DockGenix</title>
+  <meta name="description" content="DockGenix applies scientific AI to research analysis, prioritization, and domain-focused agent workflows.">
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="AI | DockGenix — AI Agents for Life Science" />
-  <meta property="og:description" content="AI/ML-driven drug discovery, predictive modeling, and MetaboAgent — our AI agent for metabolic engineering." />
-  <meta property="og:url" content="https://dockgenix.in/ai/" />
-  <meta property="og:image" content="https://dockgenix.in/assets/DockGenix_Panel.png" />
-  <meta property="og:site_name" content="DockGenix" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AI | DockGenix — AI Agents for Life Science" />
-  <meta name="twitter:description" content="AI/ML-driven drug discovery, predictive modeling, and MetaboAgent — our AI agent for metabolic engineering." />
-  <meta name="twitter:image" content="https://dockgenix.in/assets/DockGenix_Panel.png" />
-
-  <link rel="icon" type="image/png" href="/assets/dockgenix_logo.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dockgenix.in/" },
-      { "@type": "ListItem", "position": 2, "name": "AI", "item": "https://dockgenix.in/ai/" }
-    ]
-  }
-  </script>
+<link rel="canonical" href="https://dockgenix.in/ai/">
+  <meta name="theme-color" content="#081321">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Scientific AI | DockGenix">
+  <meta property="og:description" content="DockGenix applies scientific AI to research analysis, prioritization, and domain-focused agent workflows.">
+  <meta property="og:url" content="https://dockgenix.in/ai/">
+  <meta property="og:image" content="https://dockgenix.in/assets/dockgenix_logo.png">
+  <meta property="og:image:alt" content="DockGenix company logo">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="563">
+  <meta property="og:image:height" content="563">
+  <meta property="og:site_name" content="DockGenix">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Scientific AI | DockGenix">
+  <meta name="twitter:description" content="DockGenix applies scientific AI to research analysis, prioritization, and domain-focused agent workflows.">
+  <meta name="twitter:image" content="https://dockgenix.in/assets/dockgenix_logo.png">
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dockgenix.in/"},{"@type":"ListItem","position":2,"name":"Scientific AI","item":"https://dockgenix.in/ai/"}]}]}</script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
-
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/" aria-label="DockGenix home">
-        <img src="/assets/dockgenix_logo.png" width="500" height="500" alt="DockGenix logo" loading="eager" decoding="async" />
-        <div class="brand-text">
-          <span class="brand-name">DockGenix</span>
-          <span class="brand-tagline">In Silico to Wet Lab</span>
-        </div>
-      </a>
-      <button id="menu-toggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open main menu">
-        <span></span><span></span><span></span>
-      </button>
-      <nav id="primary-nav" class="nav" aria-label="Primary">
-        <a href="/about/">About</a>
-        <a href="/services/">Services</a>
-        <a href="/ai/">AI</a>
-        <a href="/process/">Process</a>
-        <a href="/programs/">Programs</a>
-        <a href="/industries/">Industries</a>
-        <a href="/team/">Team</a>
-        <a href="/contact/" class="btn btn-sm btn-accent">Get Started</a>
+  <header class="site-header" data-header>
+  <div class="shell header-inner">
+    <a class="brand" href="/">
+      <picture><source srcset="/assets/dockgenix_logo-128.webp" type="image/webp"><img src="/assets/dockgenix_logo-96.png" width="96" height="96" alt="" decoding="async"></picture>
+      <span class="brand-copy">
+        <span class="brand-name">DockGenix</span>
+        <span class="brand-tagline">In Silico × Wet Lab × AI</span>
+      </span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle hidden>
+      <span class="sr-only" data-menu-label>Open menu</span>
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+    <nav class="primary-nav" id="primary-navigation" aria-label="Primary" data-menu>
+      <a href="/services/">Capabilities</a>
+      <a href="/industries/">Solutions</a>
+      <a href="/programs/">Engagements</a>
+      <a href="/metaboagent/">MetaboAgent</a>
+      <a href="/about/">Company</a>
+      <a class="button button-small button-primary" href="/contact/">Discuss a program</a>
+    </nav>
+    <noscript>
+      <nav class="no-script-nav" aria-label="Primary navigation without JavaScript">
+        <a href="/services/">Capabilities</a><a href="/industries/">Solutions</a><a href="/programs/">Engagements</a><a href="/metaboagent/">MetaboAgent</a><a href="/about/">Company</a><a href="/contact/">Contact</a>
       </nav>
-    </div>
-  </header>
+    </noscript>
+  </div>
+  <div class="scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
+</header>
 
   <main id="main-content">
+    <section class="page-hero section-ink"><div class="shell"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><span aria-current="page">Scientific AI</span></nav><p class="eyebrow">Scientific AI</p><h1>AI as a research instrument, not an authority</h1><p>DockGenix evaluates AI where it can support analysis, retrieval, prioritization, or workflow design while keeping sources, limitations, and expert review visible.</p></div></section>
+<section class="section"><div class="shell"><div class="section-heading split-heading"><div><p class="eyebrow">Application areas</p><h2>Use AI where the task and evaluation are explicit</h2></div><p>Model choice, data suitability, applicability, and validation must be assessed for each project.</p></div><div class="challenge-grid"><article class="challenge-card"><span>Analysis</span><h3>Screening &amp; prioritization</h3><p>Evaluate whether statistical or machine-learning methods can help compare a defined candidate space.</p></article><article class="challenge-card"><span>Interpretation</span><h3>Scientific data support</h3><p>Assist structured review of simulation or experimental outputs without replacing domain judgment.</p></article><article class="challenge-card"><span>Interfaces</span><h3>Domain-focused agents</h3><p>Design conversational tools for bounded research tasks with visible grounding and stated limitations.</p></article></div></div></section>
+<section class="section section-ink"><div class="shell agent-feature"><div><p class="eyebrow">Product</p><h2>MetaboAgent</h2><p>A research-oriented conversational interface for metabolic-engineering questions. The public application is now live for research exploration; outputs require expert review.</p><div class="button-row"><a class="button button-primary" href="https://metaboagent.dockgenix.in/" target="_blank" rel="noopener">Launch MetaboAgent</a><a class="button button-secondary" href="/metaboagent/">Read the product story</a></div></div><div class="evidence-panel evidence-panel-dark"><span class="evidence-label">Responsible product requirements</span><ul class="check-list"><li>Named knowledge sources</li><li>Visible citation behavior</li><li>Known limitations</li><li>Prompt and data-handling policy</li><li>Expert review of outputs</li></ul></div></div></section>
+<section class="section"><div class="shell two-column"><div class="section-heading"><p class="eyebrow">Not represented as</p><h2>Clear boundaries for scientific AI</h2></div><ul class="definition-list"><li><strong>Not clinical authority</strong><span>Public tools are not presented as diagnostic or treatment systems.</span></li><li><strong>Not autonomous science</strong><span>Outputs require review against primary evidence and experimental context.</span></li><li><strong>Not universally applicable</strong><span>Models and data have applicability domains and failure modes.</span></li></ul></div></section>
 
-    <!-- Page hero -->
-    <section class="page-hero">
-      <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="/">Home</a>
-          <span class="sep" aria-hidden="true">/</span>
-          <span aria-current="page">AI</span>
-        </nav>
-        <span class="badge-pill"><span class="dot"></span> Artificial Intelligence</span>
-        <h1>AI at the Core of <span class="text-accent">Scientific Discovery</span></h1>
-        <p class="lead">Artificial intelligence is central to how we work. We apply AI and machine learning across drug discovery, predictive modeling, and data analysis — and we build purpose-built AI agents for life science, starting with MetaboAgent.</p>
-      </div>
-    </section>
-
-    <!-- MetaboAgent showcase -->
-    <section class="section section-dark">
-      <div class="container">
-        <div class="agent-card reveal">
-          <span class="badge-pill"><span class="dot"></span> Live &middot; AI Agent</span>
-          <h2>Meet MetaboAgent</h2>
-          <p class="agent-lead">An AI agent for <strong style="color:#fff;">metabolic engineering</strong> — a conversational assistant that helps researchers reason over metabolic pathways, enzymes, and strain design, and turn questions into actionable engineering hypotheses.</p>
-          <ul class="agent-features">
-            <li>Explore and reason over metabolic pathways</li>
-            <li>Surface enzyme and gene target ideas</li>
-            <li>Support strain and bioprocess design</li>
-            <li>Conversational, research-oriented interface</li>
-          </ul>
-          <div class="hero-actions">
-            <a href="https://metaboagent.dockgenix.in" class="btn btn-accent" target="_blank" rel="noopener noreferrer">Launch MetaboAgent →</a>
-            <a href="/contact/" class="btn btn-outline">Talk to Us</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- AI capabilities -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head section-head-center">
-          <p class="overline">Capabilities</p>
-          <h2>How We Apply AI</h2>
-          <p class="section-desc">Machine learning and agentic tools woven through our computational and experimental work.</p>
-        </div>
-        <div class="feature-grid">
-          <article class="feature-card reveal">
-            <div class="feature-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3m10-10h-3M5 12H2m15.5-6.5-2 2m-7 7-2 2m11 0-2-2m-7-7-2-2"/></svg>
-            </div>
-            <h3>AI/ML Drug Discovery</h3>
-            <p>Machine-learning models for virtual screening, hit prioritization, and predictive drug design across large chemical spaces.</p>
-          </article>
-          <article class="feature-card reveal">
-            <div class="feature-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
-            </div>
-            <h3>Predictive Modeling</h3>
-            <p>Data-driven models for property prediction, ADMET-oriented filtering, and outcome estimation to focus experimental effort.</p>
-          </article>
-          <article class="feature-card reveal">
-            <div class="feature-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
-            </div>
-            <h3>Data Analysis &amp; Optimization</h3>
-            <p>AI-assisted analysis of experimental and simulation data, with optimization loops that sharpen models over time.</p>
-          </article>
-          <article class="feature-card reveal">
-            <div class="feature-icon">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M12 7V4M9 4h6M9 13h.01M15 13h.01M8 19v2m8-2v2"/></svg>
-            </div>
-            <h3>AI Agents</h3>
-            <p>Purpose-built agents like MetaboAgent that bring reasoning and domain knowledge to specialized life-science workflows.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section section-dark">
-      <div class="container">
-        <div class="cta-inner">
-          <p class="overline">Get Started</p>
-          <h2>Bring AI Into Your R&amp;D</h2>
-          <p>From ML-driven discovery to custom agents, tell us where AI could accelerate your science.</p>
-          <div class="hero-actions">
-            <a href="/contact/" class="btn btn-accent">Start a Discussion</a>
-            <a href="https://metaboagent.dockgenix.in" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Try MetaboAgent</a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
-
-  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="/" class="brand" aria-label="DockGenix home">
-            <img src="/assets/dockgenix_logo.png" width="500" height="500" alt="DockGenix logo" loading="lazy" decoding="async" />
-            <div class="brand-text">
-              <span class="brand-name">DockGenix</span>
-              <span class="brand-tagline">In Silico to Wet Lab</span>
-            </div>
-          </a>
-          <p class="footer-desc">Bridging In Silico Intelligence with Wet Lab Validation. Integrated computational and experimental biology for accelerated scientific discovery.</p>
-        </div>
-        <div class="footer-links">
-          <div class="footer-col">
-            <h4>Explore</h4>
-            <a href="/about/">About</a>
-            <a href="/services/">Services</a>
-            <a href="/process/">Process</a>
-            <a href="/programs/">Programs</a>
-          </div>
-          <div class="footer-col">
-            <h4>Company</h4>
-            <a href="/industries/">Industries</a>
-            <a href="/ai/">AI</a>
-            <a href="/team/">Team</a>
-            <a href="/contact/">Contact</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 DockGenix. All rights reserved.</p>
-        <p><a href="mailto:info@dockgenix.in">info@dockgenix.in</a></p>
-      </div>
+  <div class="shell footer-grid">
+    <div class="footer-intro">
+      <a class="brand brand-inverse" href="/">
+        <picture><source srcset="/assets/dockgenix_logo-128.webp" type="image/webp"><img src="/assets/dockgenix_logo-96.png" width="96" height="96" alt="" loading="lazy" decoding="async"></picture>
+        <span class="brand-copy"><span class="brand-name">DockGenix</span><span class="brand-tagline">Scientific R&amp;D, connected</span></span>
+      </a>
+      <p>Computational biology, scientific AI, and experimental validation brought together to support defensible research decisions.</p>
+      <p class="footer-notice">Do not send confidential structures or unpublished datasets before an NDA is in place.</p>
     </div>
-  </footer>
+    <nav class="footer-links" aria-label="Capabilities">
+      <h2>Capabilities</h2>
+      <a href="/services/computational-drug-discovery/">Drug discovery</a>
+      <a href="/services/molecular-docking-dynamics/">Docking &amp; dynamics</a>
+      <a href="/services/bioinformatics-multi-omics/">Bioinformatics</a>
+      <a href="/services/wet-lab-validation/">Wet-lab validation</a>
+    </nav>
+    <nav class="footer-links" aria-label="Explore">
+      <h2>Explore</h2>
+      <a href="/process/">How we work</a>
+      <a href="/programs/">Engagements</a>
+      <a href="/industries/">Solutions</a>
+      <a href="/team/">Team</a>
+    </nav>
+    <nav class="footer-links" aria-label="Company and policies">
+      <h2>Company</h2>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/accessibility/">Accessibility</a>
+    </nav>
+  </div>
+  <div class="shell footer-bottom">
+    <p>© 2026 DockGenix. All rights reserved.</p>
+    <a href="mailto:info@dockgenix.in">info@dockgenix.in</a>
+  </div>
+</footer>
 
   <script src="/script.js" defer></script>
 </body>

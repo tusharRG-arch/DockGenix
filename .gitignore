@@ -1,0 +1,11 @@
+# Local scratch / screenshots
+raw/
+
+# Node
+node_modules/
+
+# Internal-only docs — keep local, never publish (GitHub repo is public,
+# and the site web root is served verbatim). Do NOT commit these.
+AGENT.md
+DEPLOYMENT.md
+DOCKGENIX_COMPANY_PROFILE.md

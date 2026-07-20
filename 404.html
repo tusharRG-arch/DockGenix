@@ -1,98 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Page Not Found | DockGenix</title>
-  <meta name="description" content="The page you're looking for could not be found. Return to DockGenix — bridging in silico intelligence with wet lab validation." />
-  <meta name="robots" content="noindex" />
+  <meta name="description" content="The requested DockGenix page could not be found.">
+<meta name="robots" content="noindex, follow">
 
-  <link rel="icon" type="image/png" href="/assets/dockgenix_logo.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css" />
+  <meta name="theme-color" content="#081321">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Page Not Found | DockGenix">
+  <meta property="og:description" content="The requested DockGenix page could not be found.">
+  <meta property="og:url" content="https://dockgenix.in/404.html">
+  <meta property="og:image" content="https://dockgenix.in/assets/dockgenix_logo.png">
+  <meta property="og:image:alt" content="DockGenix company logo">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="563">
+  <meta property="og:image:height" content="563">
+  <meta property="og:site_name" content="DockGenix">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Page Not Found | DockGenix">
+  <meta name="twitter:description" content="The requested DockGenix page could not be found.">
+  <meta name="twitter:image" content="https://dockgenix.in/assets/dockgenix_logo.png">
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
-
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/" aria-label="DockGenix home">
-        <img src="/assets/dockgenix_logo.png" width="500" height="500" alt="DockGenix logo" loading="eager" decoding="async" />
-        <div class="brand-text">
-          <span class="brand-name">DockGenix</span>
-          <span class="brand-tagline">In Silico to Wet Lab</span>
-        </div>
-      </a>
-      <button id="menu-toggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open main menu">
-        <span></span><span></span><span></span>
-      </button>
-      <nav id="primary-nav" class="nav" aria-label="Primary">
-        <a href="/about/">About</a>
-        <a href="/services/">Services</a>
-        <a href="/ai/">AI</a>
-        <a href="/process/">Process</a>
-        <a href="/programs/">Programs</a>
-        <a href="/industries/">Industries</a>
-        <a href="/team/">Team</a>
-        <a href="/contact/" class="btn btn-sm btn-accent">Get Started</a>
+  <header class="site-header" data-header>
+  <div class="shell header-inner">
+    <a class="brand" href="/">
+      <picture><source srcset="/assets/dockgenix_logo-128.webp" type="image/webp"><img src="/assets/dockgenix_logo-96.png" width="96" height="96" alt="" decoding="async"></picture>
+      <span class="brand-copy">
+        <span class="brand-name">DockGenix</span>
+        <span class="brand-tagline">In Silico × Wet Lab × AI</span>
+      </span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle hidden>
+      <span class="sr-only" data-menu-label>Open menu</span>
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+    <nav class="primary-nav" id="primary-navigation" aria-label="Primary" data-menu>
+      <a href="/services/">Capabilities</a>
+      <a href="/industries/">Solutions</a>
+      <a href="/programs/">Engagements</a>
+      <a href="/metaboagent/">MetaboAgent</a>
+      <a href="/about/">Company</a>
+      <a class="button button-small button-primary" href="/contact/">Discuss a program</a>
+    </nav>
+    <noscript>
+      <nav class="no-script-nav" aria-label="Primary navigation without JavaScript">
+        <a href="/services/">Capabilities</a><a href="/industries/">Solutions</a><a href="/programs/">Engagements</a><a href="/metaboagent/">MetaboAgent</a><a href="/about/">Company</a><a href="/contact/">Contact</a>
       </nav>
-    </div>
-  </header>
+    </noscript>
+  </div>
+  <div class="scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
+</header>
 
   <main id="main-content">
-    <section class="page-hero" style="border-bottom:0;">
-      <div class="container">
-        <p class="overline">Error 404</p>
-        <h1>This Page Could Not Be Found</h1>
-        <p class="lead">The link may be outdated or the page may have moved. Let's get you back on track.</p>
-        <div class="hero-actions">
-          <a href="/" class="btn btn-accent">Back to Home</a>
-          <a href="/services/" class="btn btn-outline">Explore Services</a>
-        </div>
-      </div>
-    </section>
-  </main>
+    <section class="error-page section-ink"><div class="shell"><p class="eyebrow">Error 404</p><h1>This research path ends here</h1><p>The requested page may have moved, or the address may be incomplete.</p><div class="button-row"><a class="button button-primary" href="/">Return home</a><a class="button button-secondary" href="/services/">Explore capabilities</a></div></div></section>
 
-  <!-- Footer -->
+  </main>
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="/" class="brand" aria-label="DockGenix home">
-            <img src="/assets/dockgenix_logo.png" width="500" height="500" alt="DockGenix logo" loading="lazy" decoding="async" />
-            <div class="brand-text">
-              <span class="brand-name">DockGenix</span>
-              <span class="brand-tagline">In Silico to Wet Lab</span>
-            </div>
-          </a>
-          <p class="footer-desc">Bridging In Silico Intelligence with Wet Lab Validation. Integrated computational and experimental biology for accelerated scientific discovery.</p>
-        </div>
-        <div class="footer-links">
-          <div class="footer-col">
-            <h4>Explore</h4>
-            <a href="/about/">About</a>
-            <a href="/services/">Services</a>
-            <a href="/process/">Process</a>
-            <a href="/programs/">Programs</a>
-          </div>
-          <div class="footer-col">
-            <h4>Company</h4>
-            <a href="/industries/">Industries</a>
-            <a href="/ai/">AI</a>
-            <a href="/team/">Team</a>
-            <a href="/contact/">Contact</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 DockGenix. All rights reserved.</p>
-        <p><a href="mailto:info@dockgenix.in">info@dockgenix.in</a></p>
-      </div>
+  <div class="shell footer-grid">
+    <div class="footer-intro">
+      <a class="brand brand-inverse" href="/">
+        <picture><source srcset="/assets/dockgenix_logo-128.webp" type="image/webp"><img src="/assets/dockgenix_logo-96.png" width="96" height="96" alt="" loading="lazy" decoding="async"></picture>
+        <span class="brand-copy"><span class="brand-name">DockGenix</span><span class="brand-tagline">Scientific R&amp;D, connected</span></span>
+      </a>
+      <p>Computational biology, scientific AI, and experimental validation brought together to support defensible research decisions.</p>
+      <p class="footer-notice">Do not send confidential structures or unpublished datasets before an NDA is in place.</p>
     </div>
-  </footer>
+    <nav class="footer-links" aria-label="Capabilities">
+      <h2>Capabilities</h2>
+      <a href="/services/computational-drug-discovery/">Drug discovery</a>
+      <a href="/services/molecular-docking-dynamics/">Docking &amp; dynamics</a>
+      <a href="/services/bioinformatics-multi-omics/">Bioinformatics</a>
+      <a href="/services/wet-lab-validation/">Wet-lab validation</a>
+    </nav>
+    <nav class="footer-links" aria-label="Explore">
+      <h2>Explore</h2>
+      <a href="/process/">How we work</a>
+      <a href="/programs/">Engagements</a>
+      <a href="/industries/">Solutions</a>
+      <a href="/team/">Team</a>
+    </nav>
+    <nav class="footer-links" aria-label="Company and policies">
+      <h2>Company</h2>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/accessibility/">Accessibility</a>
+    </nav>
+  </div>
+  <div class="shell footer-bottom">
+    <p>© 2026 DockGenix. All rights reserved.</p>
+    <a href="mailto:info@dockgenix.in">info@dockgenix.in</a>
+  </div>
+</footer>
 
   <script src="/script.js" defer></script>
 </body>
