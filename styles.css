@@ -133,7 +133,7 @@ ul, ol { padding-left: 1.2rem; }
   color: var(--ink);
   text-decoration: none;
 }
-.brand img { width: 2.8rem; height: 2.8rem; object-fit: contain; }
+.brand img { width: 3.5rem; height: 3.5rem; object-fit: contain; }
 .brand picture { display: block; }
 .brand-copy { display: grid; line-height: 1.1; }
 .brand-name { font-size: 1.05rem; font-weight: 850; letter-spacing: -0.025em; }
@@ -498,6 +498,7 @@ tbody th { min-width: 10rem; }
 /* Footer */
 .site-footer { padding-top: 4rem; color: var(--white); background: var(--ink); border-top: 1px solid var(--line-dark); }
 .brand-inverse { color: var(--white); }
+.brand-inverse img { width: 4.25rem; height: 4.25rem; }
 .brand-inverse .brand-tagline { color: var(--muted-dark); }
 .footer-grid { display: grid; gap: 2.5rem; padding-bottom: 3rem; }
 .footer-intro > p { max-width: 29rem; margin-top: 1.25rem; color: var(--muted-dark); }
